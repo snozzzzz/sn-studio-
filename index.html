@@ -10,9 +10,9 @@
 <meta property="og:description" content="Votre site, votre meilleur vendeur. Sites vitrines sur mesure pour commerces et entreprises.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<!-- Une fois le site en ligne, remplace "og-image.png" par l'adresse complète,
-     ex. https://ton-site.fr/og-image.png : WhatsApp et Facebook l'exigent. -->
-<meta property="og:image" content="og-image.png">
+<link rel="canonical" href="https://snstudio.fr/">
+<meta property="og:url" content="https://snstudio.fr/">
+<meta property="og:image" content="https://snstudio.fr/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="SN Studio — Votre site, votre meilleur vendeur.">
@@ -28,7 +28,7 @@
   "@type": "ProfessionalService",
   "name": "SN Studio",
   "description": "Création de sites vitrines sur mesure pour les commerces et les entreprises : site vitrine, refonte, landing page et visibilité locale.",
-  "email": "snstudiocontact54@gmail.com",
+  "email": "contact@snstudio.fr",
   "founder": { "@type": "Person", "name": "Essen OZ" },
   "areaServed": { "@type": "Country", "name": "France" },
   "knowsLanguage": "fr",
@@ -360,6 +360,14 @@ form{display:grid;gap:14px}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--acc)}
 form .btn{justify-self:start;margin-top:8px}
 .form__msg{font-size:.9rem;color:var(--acc2);min-height:1.4em}
+.form__msg.ok{color:#58e07c}
+.field--row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--mut);line-height:1.45;cursor:pointer}
+.check input{flex:none;width:18px;height:18px;margin-top:2px;accent-color:var(--acc)}
+.form__legal{font-size:.78rem;color:var(--mut);line-height:1.5}
+.form__legal a{text-decoration:underline}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+@media(max-width:560px){.field--row{grid-template-columns:1fr}}
 
 /* ---------- FOOTER ---------- */
 footer{border-top:1px solid var(--line);overflow:hidden}
@@ -667,12 +675,19 @@ footer:hover .foot__big{background-size:100% 100%}
         <div class="contact__ways rv" id="ways"></div>
       </div>
       <form id="form" class="rv" novalidate>
-        <div class="field"><label for="f-name">Votre nom</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-name">Votre nom</label><input id="f-name" name="name" autocomplete="name" maxlength="120" required></div>
+        <div class="field--row">
+          <div class="field"><label for="f-email">Votre email</label><input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required></div>
+          <div class="field"><label for="f-phone">Téléphone (facultatif)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+        </div>
         <div class="field"><label for="f-biz">Votre activité</label>
           <select id="f-biz" name="biz">
             <option>Commerce / boutique</option><option>Restauration / food</option><option>Beauté / bien-être</option><option>Artisan / BTP</option><option>Services / conseil</option><option>Autre</option>
           </select></div>
-        <div class="field"><label for="f-msg">Votre projet</label><textarea id="f-msg" name="msg" placeholder="Un site pour mon salon, avec les tarifs et la prise de rendez-vous…" required></textarea></div>
+        <div class="field"><label for="f-msg">Votre projet</label><textarea id="f-msg" name="msg" maxlength="4000" placeholder="Un site pour mon salon, avec les tarifs et la prise de rendez-vous…" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Ne pas remplir</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <label class="check"><input type="checkbox" name="marketing" id="f-marketing"> <span>J'accepte de recevoir des conseils et des offres de SN Studio par email. Désinscription possible à tout moment.</span></label>
+        <p class="form__legal">Vos informations servent à répondre à votre demande. <a href="mentions-legales.html#donnees">En savoir plus</a>.</p>
         <button class="btn btn--acc btn--xl magnetic" type="submit">Envoyer ma demande <i>↗</i></button>
         <p class="form__msg" id="formMsg" role="status"></p>
       </form>
@@ -695,7 +710,7 @@ footer:hover .foot__big{background-size:100% 100%}
    Laissez "" pour masquer un moyen de contact.
    ===================================================================== */
 window.SN_CONTACT = {
-  email: "snstudiocontact54@gmail.com",
+  email: "contact@snstudio.fr",
   telephone: "",    // ex : "06 12 34 56 78"
   whatsapp: "",     // ex : "33612345678"  (indicatif, sans + ni espaces)
   instagram: "",    // ex : "sn.studio"
@@ -734,12 +749,21 @@ window.SN_CONTACT = {
   }
   $('#form').addEventListener('submit',function(e){
     e.preventDefault();
-    var f=e.target, msg=$('#formMsg'), name=f.name.value.trim(), m=f.msg.value.trim();
+    var f=e.target, msg=$('#formMsg'), btn=$('button[type=submit]',f);
+    var name=f.name.value.trim(), email=f.email.value.trim(), m=f.msg.value.trim();
+    msg.classList.remove('ok');
     if(!name||!m){ msg.textContent='Indiquez votre nom et quelques mots sur votre projet.'; return; }
-    var txt='Bonjour SN Studio,\n\nNom : '+name+'\nActivité : '+f.biz.value+'\n\n'+m;
-    if(C.email){ location.href='mailto:'+C.email+'?subject='+encodeURIComponent('Demande de devis — '+name)+'&body='+encodeURIComponent(txt); msg.textContent='Votre messagerie s\'ouvre avec le message prêt à envoyer. Rien ne s\'ouvre ? Écrivez directement à '+C.email+'.'; }
-    else if(C.whatsapp){ window.open('https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(txt),'_blank','noopener'); msg.textContent='WhatsApp s\'ouvre avec le message prêt à envoyer.'; }
-    else msg.textContent='Formulaire pas encore relié : renseignez un email ou un WhatsApp dans SN_CONTACT.';
+    if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)){ msg.textContent='Indiquez une adresse email valide pour qu\'on puisse vous répondre.'; f.email.focus(); return; }
+    var payload={name:name,email:email,phone:f.phone.value.trim(),biz:f.biz.value,msg:m,marketing:f.marketing.checked,website:f.website.value};
+    btn.disabled=true; msg.textContent='Envoi en cours…';
+    fetch('/api/contact',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){ return r.json().catch(function(){return {ok:false}}).then(function(d){ if(!r.ok||!d.ok) throw new Error(d.error||'err'); }); })
+      .then(function(){ f.reset(); msg.classList.add('ok'); msg.textContent='Merci '+name.split(' ')[0]+' ! Votre demande est bien envoyée. On vous répond sous 24 h.'; })
+      .catch(function(err){
+        if(err.message==='email'){ msg.textContent='Cette adresse email semble incorrecte. Vérifiez-la et réessayez.'; return; }
+        msg.textContent='L\'envoi n\'a pas fonctionné. Écrivez-nous directement à '+(C.email||'contact@snstudio.fr')+'.';
+      })
+      .then(function(){ btn.disabled=false; });
   });
   $$('[data-style]').forEach(function(a){ a.addEventListener('click',function(){ $('#f-biz').value=a.dataset.style; }); });
 
