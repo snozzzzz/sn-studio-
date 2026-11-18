@@ -7,7 +7,7 @@
 <meta name="description" content="SN Studio conçoit des sites vitrines sur mesure pour les commerces et entreprises : beaux, rapides, pensés pour transformer les visiteurs en clients.">
 <meta name="theme-color" content="#0b0a09">
 <meta property="og:title" content="SN Studio — Création de sites web sur mesure">
-<meta property="og:description" content="Votre site, votre meilleur vendeur. Sites vitrines sur mesure pour commerces et entreprises.">
+<meta property="og:description" content="Vos futurs clients vous cherchent. Donnez-leur une raison de vous choisir. Sites vitrines sur mesure pour commerces et entreprises.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <link rel="canonical" href="https://snstudio.fr/">
@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://snstudio.fr/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SN Studio — Votre site, votre meilleur vendeur.">
+<meta property="og:image:alt" content="SN Studio — Vos futurs clients vous cherchent. Donnez-leur une raison de vous choisir.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5a1f'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='30' fill='%230b0a09'%3ESN%3C/text%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -127,13 +127,13 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;font-size:.84rem;background:rgba(239,236,228,.04)}
 .pill b{width:8px;height:8px;border-radius:50%;background:#58e07c;box-shadow:0 0 0 0 rgba(88,224,124,.6);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(88,224,124,0)}100%{box-shadow:0 0 0 0 rgba(88,224,124,0)}}
-.hero h1{position:relative;font-size:clamp(3.1rem,12.4vw,12.5rem);font-weight:700;font-stretch:82%;line-height:.86;letter-spacing:-.035em}
+.hero h1{position:relative;font-size:clamp(2.2rem,8.2vw,8.6rem);font-weight:700;font-stretch:82%;line-height:.86;letter-spacing:-.035em}
 .hero h1 .l{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
 .hero h1 .l>span{display:inline-block}
 .hero h1 .it{font-size:1.04em;line-height:.8;padding-right:.08em}
 .js .hero h1 .l>span{transform:translateY(112%) rotate(4deg);transform-origin:0 100%;transition:transform 1.15s var(--ease)}
 .js .loaded .hero h1 .l>span{transform:none}
-.hero h1 .l:nth-child(2)>span{transition-delay:.09s}.hero h1 .l:nth-child(3)>span{transition-delay:.18s}
+.hero h1 .l:nth-child(2)>span{transition-delay:.09s}.hero h1 .l:nth-child(3)>span{transition-delay:.18s}.hero h1 .l:nth-child(4)>span{transition-delay:.27s}
 .hero__bottom{position:relative;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:clamp(26px,5vh,54px);padding-top:26px;border-top:1px solid var(--line)}
 .hero__lead{max-width:34em;color:var(--mut);font-size:clamp(1rem,1.35vw,1.2rem)}
 .hero__lead strong{color:var(--fg);font-weight:500}
@@ -289,7 +289,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 .chip{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1px solid var(--acc);color:var(--acc);margin-top:14px}
 .next{margin-top:clamp(60px,10vh,120px);border:1px dashed var(--line);border-radius:26px;padding:clamp(30px,6vw,80px);text-align:center;transition:border-color .4s,background .4s;display:block}
 .next:hover{border-color:var(--acc);background:rgba(255,90,31,.06)}
-.next strong{display:block;font-size:clamp(2.6rem,9vw,8rem);font-weight:700;font-stretch:80%;line-height:.9;letter-spacing:-.045em;margin-top:10px}
+.next strong{display:block;font-size:clamp(2.3rem,6.6vw,6.4rem);font-weight:700;font-stretch:80%;line-height:.92;letter-spacing:-.045em;margin-top:14px;text-wrap:balance}
+.next p{color:var(--mut);max-width:32em;margin:22px auto 0;font-size:clamp(1rem,1.4vw,1.2rem);text-wrap:balance}
+.next .btn{margin-top:30px}
+.next:hover .btn::before{transform:none}
+.next:hover .btn i{transform:translate(3px,-3px)}
 
 /* ---------- MÉTHODE ---------- */
 .steps{display:grid;gap:18px}
@@ -342,7 +346,13 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 
 /* ---------- CONTACT ---------- */
 .contact{padding-block:clamp(80px,14vh,180px) clamp(60px,9vh,110px);overflow:hidden}
-.contact__t{font-size:clamp(3rem,12vw,12rem);font-weight:700;font-stretch:80%;line-height:.86;letter-spacing:-.035em}
+.contact__t{font-size:clamp(2.3rem,7vw,7.4rem);font-weight:700;font-stretch:80%;line-height:.9;letter-spacing:-.035em;max-width:13em}
+.contact__t .it{display:block;text-wrap:balance}
+.perks{list-style:none;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:0 0 26px}
+.perks li{display:grid;grid-template-columns:auto 1fr;column-gap:14px;row-gap:2px;padding:16px 20px;background:var(--bg)}
+.perks li::before{content:"✓";grid-row:span 2;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--acc);color:var(--bg);font-size:.78rem;font-weight:800}
+.perks b{font-size:1.05rem;font-weight:600;line-height:1.3}
+.perks span{color:var(--mut);font-size:.9rem;line-height:1.4}
 .contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,90px);margin-top:clamp(40px,8vh,90px);align-items:start}
 .contact__ways{display:grid;gap:12px}
 .way{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border:1px solid var(--line);border-radius:18px;transition:background .35s,color .35s,border-color .35s,transform .4s var(--ease)}
@@ -438,16 +448,17 @@ footer:hover .foot__big{background-size:100% 100%}
       <span>✳</span>
     </a>
     <div class="hero__top">
-      <span class="pill"><b></b> Disponible pour de nouveaux projets</span>
+      <span class="pill"><b></b> Disponible pour vos projets</span>
       <span class="mono">Studio de création web — France</span>
     </div>
     <h1>
-      <span class="l"><span>Votre site,</span></span>
-      <span class="l"><span>votre meilleur</span></span>
-      <span class="l"><span class="it">vendeur.</span></span>
+      <span class="l"><span>Vos futurs clients</span></span>
+      <span class="l"><span>vous cherchent.</span></span>
+      <span class="l"><span class="it">Donnez-leur une raison</span></span>
+      <span class="l"><span class="it">de vous choisir.</span></span>
     </h1>
     <div class="hero__bottom">
-      <p class="hero__lead"><strong>SN Studio conçoit des sites vitrines sur mesure pour les commerces et les entreprises.</strong> Beaux, rapides, pensés pour une seule chose : transformer vos visiteurs en clients.</p>
+      <p class="hero__lead"><strong>Sites vitrines sur mesure pour les commerces et les entreprises.</strong> Vos clients vous trouvent sur Google, voient en un coup d'œil ce que vous proposez, et vous appellent ou réservent en un clic.</p>
       <div class="hero__ctas">
         <a href="#contact" class="btn btn--acc magnetic">Demander un devis <i>↗</i></a>
         <a href="#concepts" class="btn btn--ghost magnetic">Voir les projets</a>
@@ -559,19 +570,19 @@ footer:hover .foot__big{background-size:100% 100%}
 
     <div class="projs">
       <article class="proj rv">
-        <a class="proj__vis" href="work/dakko/index.html" target="_blank" rel="noopener" data-cursor="Ouvrir" aria-label="Ouvrir le site DAKKO">
+        <a class="proj__vis" href="work/hongdak/index.html" target="_blank" rel="noopener" data-cursor="Ouvrir" aria-label="Ouvrir le site HONGDAK">
           <div class="browser tilt">
-            <div class="browser__bar"><i></i><i></i><i></i><span>dakko — korean fried chicken</span></div>
-            <div class="mock mock--shot"><img src="img/dakko.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></div>
+            <div class="browser__bar"><i></i><i></i><i></i><span>hongdak — korean fried chicken</span></div>
+            <div class="mock mock--shot"><img src="img/hongdak.jpg" alt="" width="1280" height="800" loading="lazy" decoding="async"></div>
           </div>
         </a>
         <div>
           <div class="proj__n">01</div>
-          <h3>DAKKO — Korean fried chicken</h3>
+          <h3>HONGDAK — Korean fried chicken</h3>
           <p>Un restaurant de poulet frit coréen à l'identité street très forte. Rouge néon sur fond noir, titres géants, vidéo en ouverture, carte, plan d'accès : un site qui donne faim avant même d'avoir lu le menu.</p>
           <ul class="tags"><li>Restauration</li><li>Vidéo</li><li>Animations</li><li>Itinéraire</li></ul>
           <span class="chip">● Démo · restaurant fictif</span><br>
-          <a href="work/dakko/index.html" target="_blank" rel="noopener" class="btn btn--acc btn--sm magnetic">Voir le site <i>↗</i></a>
+          <a href="work/hongdak/index.html" target="_blank" rel="noopener" class="btn btn--acc btn--sm magnetic">Voir le site <i>↗</i></a>
           <a href="#contact" class="btn btn--ghost btn--sm magnetic" data-style="Restauration / food">Je veux ce style <i>↗</i></a>
         </div>
       </article>
@@ -615,7 +626,9 @@ footer:hover .foot__big{background-size:100% 100%}
 
     <a href="#contact" class="next rv" data-cursor="Écrire">
       <span class="mono">( Prochain projet )</span>
-      <strong>Le vôtre<span class="it">&nbsp;?</span></strong>
+      <strong>Et si c'était <span class="it">à votre tour&nbsp;?</span></strong>
+      <p>Le prochain site qui marque les esprits pourrait être le vôtre. Votre activité est unique. Votre site devrait l'être aussi.</p>
+      <span class="btn btn--acc">Parlons-en <i>↗</i></span>
     </a>
   </section>
 
@@ -668,10 +681,15 @@ footer:hover .foot__big{background-size:100% 100%}
   <!-- ================= CONTACT ================= -->
   <section class="contact wrap" id="contact">
     <p class="mono" style="margin-bottom:22px">( 07 — Contact )</p>
-    <h2 class="contact__t rv">Parlons de <span class="it">votre projet.</span></h2>
+    <h2 class="contact__t rv">Vous avez le projet. <span class="it">On a les idées pour le concrétiser.</span></h2>
     <div class="contact__grid">
       <div>
-        <p class="sec__lead rv" style="margin:0 0 26px">Décrivez votre activité en deux lignes. On revient vers vous sous 24 h avec des premières idées. Devis gratuit, sans engagement.</p>
+        <p class="sec__lead rv" style="margin:0 0 26px">Parlez-nous de votre activité en quelques mots. On vous répond sous 24&nbsp;h avec de premières idées adaptées à votre entreprise. Gratuitement, sans engagement.</p>
+        <ul class="perks rv">
+          <li><b>Devis gratuit</b><span>Clair, détaillé et sans engagement.</span></li>
+          <li><b>Site 100&nbsp;% à vous</b><span>Nom de domaine à votre nom, tous les fichiers fournis.</span></li>
+          <li><b>Aucun abonnement imposé</b><span>Seuls le nom de domaine et l'hébergement restent à prévoir.</span></li>
+        </ul>
         <div class="contact__ways rv" id="ways"></div>
       </div>
       <form id="form" class="rv" novalidate>
